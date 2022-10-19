@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['i5.walmartimages.com'],
+    domains: ['static.promodescuentos.com'],
   },
 }
 

@@ -4,7 +4,8 @@ import styles from '../styles/Home.module.css'
 import dataExample from '../services/data'
 
 export default function Home({ data }) {
-  const products = data.data.search.searchResult.itemStacks[0].items
+  console.log(data)
+  const products = data
 
   return (
     <div className={styles.container}>
@@ -15,11 +16,11 @@ export default function Home({ data }) {
       </Head>
 
       <main className={styles.main}>
-        {products.map((product) => (
+        {products.map(({ title, media, published }) => (
 
-          <div key={product.id}>
-            <h1>{product.name}</h1>
-            <Image src={product.imageInfo.thumbnailUrl} alt={product.name} width={200} height={200} />
+          <div key={published}>
+            <h1>{title}</h1>
+            <Image src={media.thumbnail.url} alt={title} width={100} height={100} />
           </div>
         ))}
       </main>
