@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/nextjs'
 
 export default function handler(req, res) {
   const category = req.query.category
-  parse(`https://www.promodescuentoscom/rss?group=${category}`)
+  parse(`https://www.promodescuentos.com/rss?group=${category}`)
     .then((data) => {
       res.status(200).json(data.items)
     })
