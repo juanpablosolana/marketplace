@@ -30,7 +30,7 @@ export default function Home({ data }) {
 }
 
 export async function getServerSideProps() {
-  const result = await fetch('http://localhost:3000/api/getData');
+  const result = await fetch('https://marketplace.pablosolana.dev/api/getData');
   const data = await result.json();
   return { props: { data } }
 }
