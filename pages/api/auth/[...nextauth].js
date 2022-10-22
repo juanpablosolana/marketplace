@@ -1,8 +1,7 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
-import FacebookProvider from "next-auth/providers/facebook"
-import CredentialsProvider from "next-auth/providers/credentials"
-
+import NextAuth from "next-auth";
+import GoogleProvider from "next-auth/providers/google";
+import FacebookProvider from "next-auth/providers/facebook";
+import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -16,23 +15,26 @@ export const authOptions = {
       clientSecret: process.env.FACEBOOK_SECRET,
     }),
     CredentialsProvider({
-      name: 'Credentials',
+      name: "Credentials",
       credentials: {
         username: { label: "Username", type: "text", placeholder: "jsmith" },
-        password: { label: "Password", type: "password" }
+        password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        const user = { id: 1, name: 'J Smith', email: '' }
-        if (credentials.username === user.name && credentials.password === user.password) {
-          const { password, ...userWithoutPassword } = user
-          return userWithoutPassword
+        const user = { id: 1, name: "J Smith", email: "" };
+        if (
+          credentials.username === user.name &&
+          credentials.password === user.password
+        ) {
+          const { password, ...userWithoutPassword } = user;
+          return userWithoutPassword;
         } else {
-          return null
+          return null;
         }
-      }
-    })
+      },
+    }),
   ],
-  secret: process.env.NEXTAUTH_SECRET
-}
+  secret: process.env.NEXTAUTH_SECRET,
+};
 
-export default NextAuth(authOptions)
+export default NextAuth(authOptions);

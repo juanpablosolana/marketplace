@@ -2,12 +2,14 @@
 // The config you add here will be used whenever a page is visited.
 // https://docs.sentry.io/platforms/javascript/guides/nextjs/
 
-import * as Sentry from '@sentry/nextjs';
+import * as Sentry from "@sentry/nextjs";
 
 const SENTRY_DSN = process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN;
 
 Sentry.init({
-  dsn: SENTRY_DSN || 'https://8734191631b04e4fa7913b6c6015fc5d@o4504017959976960.ingest.sentry.io/4504017980948480',
+  dsn:
+    SENTRY_DSN ||
+    "https://8734191631b04e4fa7913b6c6015fc5d@o4504017959976960.ingest.sentry.io/4504017980948480",
   // Adjust this value in production, or use tracesSampler for greater control
   tracesSampleRate: 1.0,
   // ...
