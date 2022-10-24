@@ -18,7 +18,13 @@ function Header() {
           <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               {
-
+                session
+                  ? <li>
+                    <Signout />
+                  </li>
+                  : <li>
+                    <Signin />
+                  </li>
               }
             </ul>
           </div>
