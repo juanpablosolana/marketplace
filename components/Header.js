@@ -1,7 +1,6 @@
 import { Signin, Signout } from "../components/session"
 import Image from "next/image"
 import { useSession } from 'next-auth/react'
-import Link from 'next/link'
 
 function Header() {
   const { data: session } = useSession()

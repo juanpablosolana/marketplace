@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Head from "next/head";
 import { getSession } from "next-auth/react";
-import { Signin, Signout } from "../components/Session";
 import Header from "../components/Header";
+import { ProductList } from "../components/ProductList";
 
 export default function Home({ data, session }) {
 
@@ -18,21 +17,7 @@ export default function Home({ data, session }) {
 
       <main className="container px-6 py-10 mx-auto">
         <Header />
-        <div className="grid grid-cols-1 gap-8 mt-8 md:mt-16 md:grid-cols-2">
-          {products.map(({ title, media, published, category }) => (
-            <div key={published} className="text-xl font-semibold text-gray-800 hover:underline dark:text-white">
-              <h2>{title}</h2>
-              <Image
-                src={media.thumbnail.url}
-                alt={title}
-                width={150}
-                height={150}
-                className="inline w-full h-56 rounded-lg margin-auto"
-              />
-              <p className="text-sm text-gray-500 dark:text-gray-300">categoría: {category}</p>
-            </div>
-          ))}
-        </div>
+        <ProductList products={products} />
       </main>
     </div>
   );
