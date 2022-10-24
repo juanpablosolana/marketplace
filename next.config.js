@@ -4,7 +4,7 @@ const moduleExports = {
     hideSourceMaps: true,
   },
   images: {
-    domains: ["static.promodescuentos.com", "lh3.googleusercontent.com"],
+    domains: ["static.promodescuentos.com", "lh3.googleusercontent.com", "flowbite.com"],
   },
 };
 
