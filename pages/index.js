@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Head from "next/head";
 import { getSession } from "next-auth/react";
-import { Signin, Signout } from "../components/signIn";
+import { Signin, Signout } from "../components/session";
 
 export default function Home({ data, session }) {
+
   const products = data;
 
   return (
@@ -17,9 +18,13 @@ export default function Home({ data, session }) {
       {session ? <Signout /> : <Signin />}
 
       <main className="main">
+        <h1 className="text-3xl font-bold underline">
+          Hello world!
+        </h1>
+
         {products.map(({ title, media, published, category }) => (
           <div key={published}>
-            <h1>{title}</h1>
+            <h2>{title}</h2>
             <Image
               src={media.thumbnail.url}
               alt={title}
