@@ -10,7 +10,7 @@ function Header() {
         <div className="flex flex-wrap justify-around items-center mx-auto max-w-screen-xl">
           <Image
             src="https://flowbite.com/docs/images/logo.svg"
-            className="mr-3 h-6 sm:h-9" alt="Flowbite Logo"
+            className="mr-3 h-6 sm:h-9" alt="Marketplace Logo"
             width={50}
             height={50}
           />
@@ -18,13 +18,7 @@ function Header() {
           <div className="hidden items-center w-full lg:flex lg:w-auto lg:order-1">
             <ul className="mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
               {
-                session
-                  ? <li>
-                    <Signout />
-                  </li>
-                  : <li>
-                    <Signin />
-                  </li>
+
               }
             </ul>
           </div>
